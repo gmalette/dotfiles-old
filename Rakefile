@@ -22,6 +22,7 @@ task :update_submodules do
 end
 
 task :install_matcher do
+  next if system("which matcher > /dev/null")
   `git clone git@github.com:burke/matcher.git && cd matcher && make && sudo make install`
   `rm -rf matcher`
 end

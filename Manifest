@@ -6,3 +6,5 @@ caprc
 gitconfig
 gemrc
 git-completion.sh
+tmux.conf
+
