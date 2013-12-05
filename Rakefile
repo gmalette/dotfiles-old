@@ -1,4 +1,4 @@
-task :install => [:update_submodules] do
+task :install => [:update_submodules, :install_matcher] do
   root = File.expand_path(".")
   target = File.expand_path("~")
   File.read('Manifest').each_line do |file|
@@ -19,4 +19,9 @@ task :update_submodules do
   print "Updating git submodules\n"
   `git submodule init`
   `git submodule update`
+end
+
+task :install_matcher do
+  `git clone git@github.com:burke/matcher.git && cd matcher && make && sudo make install`
+  `rm -rf matcher`
 end
