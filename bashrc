@@ -29,6 +29,7 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias gs='git status'
 alias ga='git add'
+alias gco='git checkout'
 alias gp='git push'
 alias be='bundle exec'
 
@@ -49,5 +50,3 @@ export RUBY_HEAP_FREE_MIN=500000
 export GREP_OPTIONS="--color=auto"
 export GREP_COLOR="1;37;41"
 
-# Hub
-eval "$(hub alias -s)"

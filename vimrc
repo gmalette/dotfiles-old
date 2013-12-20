@@ -109,6 +109,9 @@ hi Search guifg=NONE guibg=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=un
 " Clear the search buffer when hitting return
 :nnoremap <CR> :nohlsearch<cr>
 
+" Make . in visual mode work as in normal mode
+xnoremap . :norm.<CR>
+
 " auto complete
 function! SuperTab()
     if (strpart(getline('.'),col('.')-2,1)=~'^\W\?$')
