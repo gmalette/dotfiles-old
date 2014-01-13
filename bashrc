@@ -1,6 +1,7 @@
 # Load rvm (if installed)
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+export PATH="$HOME/.rbenv/bin:$PATH"
 # Load rbenv (if installed)
 [[ -s "$HOME/.rbenv" ]] && eval "$(rbenv init -)"
 
