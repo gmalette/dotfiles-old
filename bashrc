@@ -40,14 +40,21 @@ alias sha256sum='shasum -a 256'
 # json pretty-print
 alias pp='python -mjson.tool'
 
-# Ruby performance tweaks (https://gist.github.com/1688857)
-export RUBY_HEAP_MIN_SLOTS=1000000
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=100000000
-export RUBY_HEAP_FREE_MIN=500000
-
 # Colorize grep by default
 export GREP_OPTIONS="--color=auto"
 export GREP_COLOR="1;37;41"
 
+function rt {
+  if [ -e .zeus.sock ]; then
+
+bundle exec zeus test $@
+
+  elif grep -q "spring-commands-testunit" Gemfile; then
+
+bundle exec spring testunit $@
+
+  else
+bundle exec ruby -Itest $@
+
+  fi
+}

@@ -31,6 +31,7 @@ set backspace=indent,eol,start
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
 set number        " always show line numbers
+set rnu           " Relative line numbers
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch     " set show matching parenthesis
 set ignorecase    " ignore case when searching
@@ -80,6 +81,10 @@ set splitright
 autocmd filetype html,xml set listchars-=tab:>.
 autocmd BufNewFile,BufRead Gemfile,Vagrantfile,Guardfile set filetype=ruby
 
+" DANGER this removes all whitespace at end of lines on write
+" This could screw up files. I guess I will find out which!
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Go lang
 autocmd BufNewFile,BufRead *.go set filetype=go
 autocmd FileType go setl tabstop=4 softtabstop=2 shiftwidth=4 noexpandtab
@@ -90,7 +95,7 @@ autocmd BufNewFile,BufRead *.coffee.erb set filetype=coffee
 autocmd FileType coffee setl shiftwidth=2 expandtab
 
 " automatically cd to current buff dir
-au   BufEnter *   execute ":lcd " . expand("%:p:h")
+" au   BufEnter *   execute ":lcd " . expand("%:p:h")
 
 " disable arrows navigation in insert mode
 map <Left>  <NOP>
