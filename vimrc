@@ -30,7 +30,7 @@ set backspace=indent,eol,start
                   " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
-set number        " always show line numbers
+" set number        " always show line numbers
 set rnu           " Relative line numbers
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch     " set show matching parenthesis
@@ -187,8 +187,8 @@ set laststatus=2
 let g:Powerline_symbols = 'fancy'
 
 " Rubytest
-let g:rubytest_cmd_test = "bundle exec rake test TEST=%:p:h/%p"
-let g:rubytest_cmd_testcase = 'bundle exec rake test TEST=%:p:h/%p TESTOPTS="--name=%c"'
+let g:rubytest_cmd_test = "bundle exec spring testunit %:p:h/%p"
+let g:rubytest_cmd_testcase = 'bundle exec spring testunit %:p:h/%p --name=%c'
 map <unique> <Leader>L <Plug>RubyTestRun
 map <unique> <Leader>l <Plug>RubyFileRun
 map <unique> <Leader>. <Plug>RubyTestRunLast

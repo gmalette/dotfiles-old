@@ -1,2 +1,4 @@
 --type-set=coffeescript=.coffee
 --type-set=coffee=.coffee
+--type-set=liquid=.liquid
+--ignore-dir={.bundle,public}

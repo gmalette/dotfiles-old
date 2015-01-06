@@ -8,3 +8,4 @@ gemrc
 git-completion.sh
 tmux.conf
 ackrc
+tmux

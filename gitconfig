@@ -8,7 +8,7 @@
 
 [core]
 	editor = /usr/bin/vim
- excludesfile = /opt/boxen/config/git/gitignore
+ excludesfile = ~/.gitignore
 
 [merge]
   tool = vimdiff
@@ -19,9 +19,12 @@
 
 [alias]
   st = status
-  co = commit
+  co = checkout
   br = branch
-  ch = checkout
+  cm = commit
+  amend = commit --amend -C @
+  frob = !git rebase -i "$(git merge-base @ origin/master)"
+  rebase-green = !git rebase "$(script/ci_last_green_master)"
 
 [branch]
   autosetuprebase = always
